@@ -3,7 +3,7 @@ import { Flex, Box } from '@chakra-ui/react';
 import { Link } from '@chakra-ui/react'
 import { Link as NavLink } from 'react-router-dom';
 
-export const MainNav = () => {
+export const Navigation = () => {
   return (
     <Box>
       <Flex as={'nav'} gap={'32px'}>
