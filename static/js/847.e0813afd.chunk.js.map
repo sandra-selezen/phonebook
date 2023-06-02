@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/847.e0813afd.chunk.js","mappings":"qLASA,UANiB,WACf,OACE,SAAC,KAAD,2BAEH,C","sources":["pages/Contacts.js"],"sourcesContent":["import { Box } from '@chakra-ui/react';\nimport React from 'react';\n\nconst Contacts = () => {\n  return (\n    <Box>Contacts Page</Box>\n  )\n};\n\nexport default Contacts;"],"names":[],"sourceRoot":""}
