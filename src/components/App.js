@@ -1,3 +1,4 @@
+import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
 
 export const App = () => {
@@ -5,6 +6,7 @@ export const App = () => {
     <div>
       <Header />
       React homework template
+      <Footer />
     </div>
   );
 };
