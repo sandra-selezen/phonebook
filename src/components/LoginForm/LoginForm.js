@@ -4,18 +4,16 @@ import React from 'react';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  name: yup.string().required(),
   email: yup.string().email().required(),
   password: yup.string().required(),
 })
 
 const initialValues = {
-  name: "",
   email: "",
   password: "",
 }
 
-export const SignUpForm = () => {
+export const LoginForm = () => {
   return (
     <Formik
       initialValues={initialValues}
@@ -28,10 +26,6 @@ export const SignUpForm = () => {
       {({ handleSubmit }) => (
         <Form onSubmit={handleSubmit}>
           <FormControl isRequired>
-            <FormLabel htmlFor='name'>Full name</FormLabel>
-            <Field as={Input} id='name' name='name' type='text' placeholder='Enter your full name' />
-          </FormControl>
-          <FormControl isRequired>
             <FormLabel htmlFor='email'>Email</FormLabel>
             <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
           </FormControl>
@@ -39,7 +33,7 @@ export const SignUpForm = () => {
             <FormLabel htmlFor='password'>Password</FormLabel>
             <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
           </FormControl>
-          <Button type='submit'>Sign Up</Button>
+          <Button type='submit'>Login</Button>
         </Form>
       )}
     </Formik>
