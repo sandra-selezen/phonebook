@@ -5,7 +5,7 @@ import * as yup from 'yup';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  phone: yup.string().required(),
+  number: yup.string().required(),
 });
 
 const initialValues = {
@@ -30,8 +30,8 @@ export const ContactForm = () => {
             <Field as={Input} id='name' name='name' type='text' placeholder='Enter contact name' />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel htmlFor='number'>Email</FormLabel>
-            <Field as={Input} id='number' name='number' type='number' placeholder='Enter contact phone number' />
+            <FormLabel htmlFor='number'>Number</FormLabel>
+            <Field as={Input} id='number' name='number' type='tel' placeholder='Enter contact phone number' />
           </FormControl>
           <Button type='submit'>Sign Up</Button>
         </Form>
