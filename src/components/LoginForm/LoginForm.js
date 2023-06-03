@@ -1,7 +1,8 @@
-import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { Button, FormControl, FormLabel, Input, Icon } from '@chakra-ui/react';
 import { Field, Formik, Form } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
+import { RiMailFill, RiLock2Fill, RiLoginBoxFill } from "react-icons/ri";
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -26,14 +27,14 @@ export const LoginForm = () => {
       {({ handleSubmit }) => (
         <Form onSubmit={handleSubmit}>
           <FormControl isRequired>
-            <FormLabel htmlFor='email'>Email</FormLabel>
+            <FormLabel htmlFor='email'><Icon as={RiMailFill} />Email</FormLabel>
             <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel htmlFor='password'>Password</FormLabel>
+            <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
             <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
           </FormControl>
-          <Button type='submit'>Login</Button>
+          <Button type='submit'><Icon as={RiLoginBoxFill} />Login</Button>
         </Form>
       )}
     </Formik>
