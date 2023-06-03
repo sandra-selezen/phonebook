@@ -34,7 +34,7 @@ export const ContactForm = () => {
             <FormLabel htmlFor='number'><Icon as={RiPhoneFill} />Number</FormLabel>
             <Field as={Input} id='number' name='number' type='tel' placeholder='Enter contact phone number' />
           </FormControl>
-          <Button type='submit' aria-label='Add contact'><Icon as={RiUserAddFill} /></Button>
+          <Button type='submit'><Icon as={RiUserAddFill} />Add contact</Button>
         </Form>
       )}
     </Formik>
