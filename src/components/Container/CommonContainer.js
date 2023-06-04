@@ -3,7 +3,7 @@ import React from 'react';
 
 export const CommonContainer = ({ children }) => {
   return (
-    <Container width={['container.sm', 'container.md', 'container.lg', 'container.xl']} centerContent>
+    <Container width={['container.sm', 'container.md', 'container.lg', 'container.xl']}>
       {children}
     </Container>
   )
