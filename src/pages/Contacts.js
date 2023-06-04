@@ -7,7 +7,6 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
-  ModalFooter,
   useDisclosure
 } from '@chakra-ui/react';
 import { ContactForm } from 'components/ContactsForm/ContactForm';
@@ -29,11 +28,6 @@ const Contacts = () => {
           <ModalBody>
             <ContactForm />
           </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
       <ContactList />
