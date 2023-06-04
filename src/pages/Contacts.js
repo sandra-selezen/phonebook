@@ -11,6 +11,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { ContactForm } from 'components/ContactsForm/ContactForm';
+import { ContactList } from 'components/ContactsList/ContactsList';
 import { CommonContainer } from 'components/Container/CommonContainer';
 import React from 'react';
 
@@ -34,8 +35,8 @@ const Contacts = () => {
             </Button>
           </ModalFooter>
         </ModalContent>
-        
       </Modal>
+      <ContactList />
     </CommonContainer>
   )
 };
