@@ -17,9 +17,13 @@ export const ContactList = () => {
       {!error && !isLoading && contacts?.length > 0 && (
         <VStack spacing='24px'>
           {contacts.map(contact => (
-            <Flex key={contact.id} alignItems={'center'}>
-              <Text>{contact.name}: {contact.number}</Text>
-              <Button title='Delete contact' aria-label='Delete contact'><RiUserUnfollowFill /></Button>
+            <Flex key={contact.id} alignItems={'center'} gap={'24px'}>
+              <Box>
+                <Text>{contact.name}: {contact.number}</Text>
+              </Box>
+              <Box>
+                <Button title='Delete contact' aria-label='Delete contact'><RiUserUnfollowFill /></Button>
+              </Box>
             </Flex>
           ))}
         </VStack>
