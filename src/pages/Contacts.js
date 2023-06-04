@@ -12,6 +12,7 @@ import {
 import { ContactForm } from 'components/ContactsForm/ContactForm';
 import { ContactList } from 'components/ContactsList/ContactsList';
 import { CommonContainer } from 'components/Container/CommonContainer';
+import { Filter } from 'components/Filter/Filter';
 import React from 'react';
 
 const Contacts = () => {
@@ -20,6 +21,7 @@ const Contacts = () => {
     <CommonContainer>
       <Text>Contacts Page</Text>
       <Button onClick={onOpen}>Add new contact</Button>
+      <Filter />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
