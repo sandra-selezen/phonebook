@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/operations';
 import { VStack, Text, Box, Button, Flex } from '@chakra-ui/react';
 import { useError, useFilteredContacts, useIsLoading } from 'hooks/hooks';
 import React from 'react';
@@ -8,6 +10,9 @@ export const ContactList = () => {
   const contacts = useFilteredContacts();
   const isLoading = useIsLoading();
   const error = useError();
+
+  const dispatch = useDispatch();
+  const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
 
   return (
     <>
@@ -22,7 +27,7 @@ export const ContactList = () => {
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
               <Box>
-                <Button title='Delete contact' aria-label='Delete contact'><RiUserUnfollowFill /></Button>
+                <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
               </Box>
             </Flex>
           ))}
