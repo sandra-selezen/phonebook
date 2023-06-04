@@ -50,7 +50,7 @@ export const ContactForm = () => {
         actions.resetForm();
       }}
     >
-      <Form onSubmit={onAddContact}>
+      <Form>
         <FormControl isRequired>
           <FormLabel htmlFor='name'><Icon as={RiUserFill} />Name</FormLabel>
           <Field as={Input} id='name' name='name' type='text' placeholder='Enter contact name' />
