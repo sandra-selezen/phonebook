@@ -1,12 +1,12 @@
-import { Box } from '@chakra-ui/react';
 import { ContactForm } from 'components/ContactsForm/ContactForm';
+import { CommonContainer } from 'components/Container/CommonContainer';
 import React from 'react';
 
 const AddContact = () => {
   return (
-    <Box>
+    <CommonContainer>
       <ContactForm />
-    </Box>
+    </CommonContainer>
   )
 };
 

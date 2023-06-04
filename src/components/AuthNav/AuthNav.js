@@ -7,7 +7,7 @@ export const AuthNav = () => {
   return (
     <Box>
       <Flex gap={'32px'}>
-        <Box><Link as={NavLink} to="/signup">Sign Up</Link></Box>
+        <Box><Link as={NavLink} to="/register">Sign Up</Link></Box>
         <Box><Link as={NavLink} to="/login">Log In</Link></Box>
       </Flex>
     </Box>

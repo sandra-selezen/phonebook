@@ -1,12 +1,12 @@
-import { Box } from '@chakra-ui/react';
+import { CommonContainer } from 'components/Container/CommonContainer';
 import { SignUpForm } from 'components/SignUpForm/SignUpForm';
 import React from 'react';
 
 const SignUp = () => {
   return (
-    <Box>
+    <CommonContainer>
       <SignUpForm />
-    </Box>
+    </CommonContainer>
   )
 };
 
