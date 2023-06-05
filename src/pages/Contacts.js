@@ -16,6 +16,7 @@ import { Filter } from 'components/Filter/Filter';
 import React from 'react';
 
 const Contacts = () => {
+  
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <CommonContainer>

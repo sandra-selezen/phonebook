@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact, fetchContacts } from 'redux/operations';
 import { VStack, Text, Box, Button, Flex } from '@chakra-ui/react';
 import { useError, useFilteredContacts, useIsLoading } from 'hooks/hooks';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RiUserUnfollowFill } from 'react-icons/ri';
 
 export const ContactList = () => {
@@ -12,6 +12,11 @@ export const ContactList = () => {
   const error = useError();
 
   const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
 
   return (
