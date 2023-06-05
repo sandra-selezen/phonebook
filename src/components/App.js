@@ -1,7 +1,7 @@
 import React, { lazy, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { Text } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 import { Layout } from './Layout';
 import { RestrictedRoute } from 'routes/RestrictedRoute';
 import { PrivateRoute } from 'routes/PrivateRoute';
@@ -20,7 +20,7 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (<Text>Refreshing user...</Text>) : (
+  return isRefreshing ? (<Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
