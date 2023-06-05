@@ -44,7 +44,7 @@ export const LoginForm = () => {
           <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
           <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
         </FormControl>
-        <Button type='submit'><Icon as={RiLoginBoxFill} />Login</Button>
+        <Button type='submit'><Icon as={RiLoginBoxFill} />Log In</Button>
       </Form>
     </Formik>
   )

@@ -1,6 +1,10 @@
 import React, { lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { Layout } from './Layout';
+// import { useDispatch } from 'react-redux';
+// import { useAuth } from 'hooks/hooks';
+// import { refreshUser } from 'redux/auth/operations';
+// import { Text } from '@chakra-ui/react';
 
 const HomePage = lazy(() => import("../pages/Home"));
 const ContactsPage = lazy(() => import("../pages/Contacts"));
@@ -8,6 +12,12 @@ const SignUpPage = lazy(() => import("../pages/SignUp"));
 const LoginPage = lazy(() => import("../pages/Login"));
 
 export const App = () => {
+  // const dispatch = useDispatch();
+  // const { isRefreshing } = useAuth();
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -18,5 +28,6 @@ export const App = () => {
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
+    
   );
 };
