@@ -9,15 +9,16 @@ import {
   ModalCloseButton,
   useDisclosure
 } from '@chakra-ui/react';
+import React from 'react';
 import { ContactForm } from 'components/ContactsForm/ContactForm';
 import { ContactList } from 'components/ContactsList/ContactsList';
 import { CommonContainer } from 'components/Container/CommonContainer';
 import { Filter } from 'components/Filter/Filter';
-import React from 'react';
 
 const Contacts = () => {
   
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   return (
     <CommonContainer>
       <Text>Contacts Page</Text>

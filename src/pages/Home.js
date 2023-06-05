@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import { CommonContainer } from 'components/Container/CommonContainer';
 import React from 'react';
+import { CommonContainer } from 'components/Container/CommonContainer';
 
 const Home = () => {
   return (
