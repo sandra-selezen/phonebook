@@ -33,22 +33,20 @@ export const ContactForm = () => {
     return Boolean(replicatedContactName);
   }
 
-  const onAddContact = ({ name, number }) => {
-
+  const onAddContact = ({ name, number }, { resetForm }) => {
+    console.log(name, number);
     isReplicated({ name, number })
       ? toast('This contact is already in your Phonebook!', { icon: '👻', })
       : dispatch(addContact({ name, number }));
+    
+    resetForm();
   };
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schema}
-      onSubmit={(values, actions) => {
-        console.log(values);
-        onAddContact({ ...values });
-        actions.resetForm();
-      }}
+      onSubmit={onAddContact}
     >
       <Form>
         <FormControl isRequired>
