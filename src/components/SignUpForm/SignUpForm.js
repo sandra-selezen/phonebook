@@ -21,15 +21,14 @@ const initialValues = {
 export const SignUpForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, actions) => {
-    dispatch(
-      register({
-        name: values.name,
-        email: values.email,
-        password: values.password,
+  const handleSubmit = ({ name, email, password }, { resetForm }) => {
+    dispatch(register({
+        name,
+        email,
+        password,
       })
     );
-    actions.resetForm();
+    resetForm();
   }
 
   return (

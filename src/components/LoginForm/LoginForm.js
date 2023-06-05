@@ -19,14 +19,14 @@ const initialValues = {
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = ({ email, password }, { resetForm }) => {
     dispatch(
       logIn({
-        email: values.email,
-        password: values.password,
+        email,
+        password,
       })
     );
-    actions.resetForm();
+    resetForm();
   }
 
   return (
