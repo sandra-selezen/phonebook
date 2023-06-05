@@ -1,6 +1,7 @@
+import '@fontsource/poppins'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, Spinner } from '@chakra-ui/react';
 import { BrowserRouter } from "react-router-dom";
 import { App } from 'components/App';
 import { theme } from './utils/extendTheme';
@@ -12,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={<Spinner />} persistor={persistor}>
           <BrowserRouter basename='/goit-react-hw-08-phonebook'>
           <App />
         </BrowserRouter>

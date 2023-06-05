@@ -1,5 +1,5 @@
 import {
-  Text,
+  Heading,
   Button,
   Modal,
   ModalOverlay,
@@ -21,7 +21,7 @@ const Contacts = () => {
   
   return (
     <CommonContainer>
-      <Text>Contacts Page</Text>
+      <Heading>Contacts Page</Heading>
       <Button onClick={onOpen}>Add new contact</Button>
       <Filter />
       <Modal isOpen={isOpen} onClose={onClose}>
