@@ -19,11 +19,9 @@ const initialValues = {
 };
 
 export const SignUpForm = () => {
-
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    console.log(values, actions);
     dispatch(
       register({
         name: values.name,

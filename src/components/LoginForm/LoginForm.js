@@ -3,6 +3,8 @@ import { Field, Formik, Form } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
 import { RiMailFill, RiLock2Fill, RiLoginBoxFill } from "react-icons/ri";
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/operations';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -15,28 +17,35 @@ const initialValues = {
 }
 
 export const LoginForm = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(
+      logIn({
+        email: values.email,
+        password: values.password,
+      })
+    );
+    actions.resetForm();
+  }
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schema}
-      onSubmit={(values, actions) => {
-        alert(JSON.stringify(values, null, 2));
-        actions.resetForm();
-      }}
+      onSubmit={handleSubmit}
     >
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit}>
-          <FormControl isRequired>
-            <FormLabel htmlFor='email'><Icon as={RiMailFill} />Email</FormLabel>
-            <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
-          </FormControl>
-          <FormControl isRequired>
-            <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
-            <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
-          </FormControl>
-          <Button type='submit'><Icon as={RiLoginBoxFill} />Login</Button>
-        </Form>
-      )}
+      <Form>
+        <FormControl isRequired>
+          <FormLabel htmlFor='email'><Icon as={RiMailFill} />Email</FormLabel>
+          <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
+          <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
+        </FormControl>
+        <Button type='submit'><Icon as={RiLoginBoxFill} />Login</Button>
+      </Form>
     </Formik>
   )
 }
