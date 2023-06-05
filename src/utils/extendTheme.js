@@ -38,6 +38,10 @@ export const theme = extendTheme({
       black: "hsl(0, 0%, 0%)",
     },
   },
+  fonts: {
+    heading: `'Poppins', sans-serif`,
+    body: `'Poppins', sans-serif`,
+  },
   breakpoints,
   styles,
 })
