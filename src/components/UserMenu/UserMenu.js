@@ -12,7 +12,7 @@ export const UserMenu = () => {
   const handleLogOut = () => dispatch(logOut());
   return (
     <HStack>
-      <Avatar name={user.name} src='https://bit.ly/broken-link' />
+      <Avatar size='sm' name={user.name} src='https://bit.ly/broken-link' />
       <Text>{user.name}</Text>
       <Button type='button' onClick={handleLogOut}><Icon as={RiLogoutBoxFill} />Log Out</Button>
     </HStack>
