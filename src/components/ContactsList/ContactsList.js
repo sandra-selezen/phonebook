@@ -14,7 +14,12 @@ export const ContactList = ({ contacts, isLoading, error }) => {
     <>
       {isLoading && <Spinner />}
       {!error && !isLoading && contacts?.length > 0 && (
-        <VStack spacing={4} divider={<StackDivider borderColor={'white'} />}>
+        <VStack
+          height={'340px'}
+          overflow={'scroll'}
+          spacing={4}
+          divider={<StackDivider
+            borderColor={'white'} />}>
           {contacts.map(contact => (
             <Flex key={contact.id} alignItems={'center'} gap={'24px'}>
               <Box>
