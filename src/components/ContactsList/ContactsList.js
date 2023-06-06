@@ -7,16 +7,19 @@ import {
   Box,
   Button,
   Spinner,
-  Flex
+  Flex,
+  useDisclosure
 } from '@chakra-ui/react';
 import React from 'react';
 import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
+import { ContactModal } from 'components/Modal/ContactModal';
+import { ChangeContactForm } from 'components/ContactsForm/ChangeContactForm';
 
-export const ContactList = ({ contacts, isLoading, error }) => {
+export const ContactList = ({ contacts, isLoading, error, onClick }) => {
 
   const dispatch = useDispatch();
   const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       {isLoading && <Spinner />}
@@ -33,13 +36,16 @@ export const ContactList = ({ contacts, isLoading, error }) => {
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
               <Flex>
-                <Button title='Edit contact' aria-label='Edit contact' mr={'12px'}><RiUserSettingsFill /></Button>
+                <Button title='Edit contact' aria-label='Edit contact' mr={'12px'} onClick={onOpen}><RiUserSettingsFill /></Button>
                 <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
               </Flex>
             </Flex>
           ))}
         </VStack>
       )}
+      <ContactModal isOpen={isOpen} onClose={onClose} title={'Change contact'}>
+        <ChangeContactForm />
+      </ContactModal>
     </>
   )
 }
