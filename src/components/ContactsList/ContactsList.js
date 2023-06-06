@@ -23,7 +23,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
       {!error && !isLoading && contacts?.length > 0 && (
         <VStack
           align='stretch'
-          height={'340px'}
+          maxHeight={'340px'}
           overflow={'scroll'}
           spacing={4}
           divider={<StackDivider borderColor={'white'} />}>
