@@ -10,7 +10,7 @@ import {
   Flex
 } from '@chakra-ui/react';
 import React from 'react';
-import { RiUserUnfollowFill } from 'react-icons/ri';
+import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
 
 export const ContactList = ({ contacts, isLoading, error }) => {
 
@@ -33,6 +33,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
               <Box>
+                <Button title='Edit contact' aria-label='Edit contact' mr={'12px'}><RiUserSettingsFill /></Button>
                 <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
               </Box>
             </Flex>
