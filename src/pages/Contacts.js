@@ -58,7 +58,12 @@ const Contacts = () => {
       
       <Filter />
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+        <ModalOverlay
+          bg='none'
+          backdropFilter='auto'
+          backdropInvert='10%'
+          backdropBlur='2px'
+        />
         <ModalContent>
           <ModalHeader>Add new contact</ModalHeader>
           <ModalCloseButton />
