@@ -12,7 +12,7 @@ export const CommonContainer = ({ children }) => {
       paddingTop={'40px'}
       paddingBottom={'40px'}
       sx={{
-        backgroundColor: 'containerBgColor',
+        backgroundColor: 'hsla(0, 0%, 10%, 0.5)',
         // backdropFilter: 'blur(8px)',
         border: '2px solid white',
         borderRadius: '1rem',

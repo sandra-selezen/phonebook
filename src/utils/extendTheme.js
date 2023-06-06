@@ -38,7 +38,6 @@ export const theme = extendTheme({
     app: {
       white: "hsl(0, 0%, 100%)",
       black: "hsl(0, 0%, 0%)",
-      containerBgColor: "hsla(0, 0%, 10%, 0.1)",
     },
   },
   fonts: {
