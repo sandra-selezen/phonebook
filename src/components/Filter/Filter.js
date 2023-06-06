@@ -2,7 +2,7 @@ import { RiUserSearchFill } from "react-icons/ri";
 import { useDispatch } from 'react-redux';
 import { useFilter } from "hooks/hooks";
 import { setFilter } from 'redux/filterSlice';
-import { Input, Text, Icon } from "@chakra-ui/react";
+import { Input, FormLabel, Icon, FormControl } from "@chakra-ui/react";
 
 export const Filter = () => {
   const filter = useFilter();
@@ -13,9 +13,9 @@ export const Filter = () => {
   };
 
   return (
-    <>
-      <Text><Icon as={RiUserSearchFill} /> Find contact by name </Text>
+    <FormControl marginBottom={'24px'}>
+      <FormLabel><Icon as={RiUserSearchFill} /> Find contact by name </FormLabel>
       <Input value={filter} onChange={handleFilter} autoComplete="off" />
-    </>
+    </FormControl>
   )
 }

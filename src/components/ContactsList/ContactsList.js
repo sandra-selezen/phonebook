@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { VStack, StackDivider, Text, Box, Button, Spinner, SimpleGrid } from '@chakra-ui/react';
+import { VStack, StackDivider, Text, Box, Button, Spinner, Flex, HStack } from '@chakra-ui/react';
 import React from 'react';
 import { RiUserUnfollowFill } from 'react-icons/ri';
 
@@ -22,14 +22,14 @@ export const ContactList = ({ contacts, isLoading, error }) => {
           divider={<StackDivider
             borderColor={'white'} />}>
           {contacts.map(contact => (
-            <SimpleGrid key={contact.id}>
+            <Flex key={contact.id} justifyContent={'space-between'} alignItems={'center'}>
               <Box>
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
               <Box>
                 <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
               </Box>
-            </SimpleGrid>
+            </Flex>
           ))}
         </VStack>
       )}

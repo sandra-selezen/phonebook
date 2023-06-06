@@ -41,7 +41,12 @@ const Contacts = () => {
   return (
     <CommonContainer>
       <VisuallyHidden><Heading>Contacts Page</Heading></VisuallyHidden>
-      <Stack direction={['column', 'column', 'row', 'row']} justifyContent={'space-between'} alignItems={'center'}>
+      <Stack
+        direction={['column', 'column', 'row', 'row']}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+        marginBottom={'12px'}
+      >
         {!contacts.length && !error && !isLoading && (
           <Box><Text fontWeight={'700'}>Your Phonebook is empty 🥺</Text></Box>
         )}

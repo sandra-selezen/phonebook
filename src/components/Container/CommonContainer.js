@@ -4,7 +4,7 @@ import React from 'react';
 export const CommonContainer = ({ children }) => {
   return (
     <Container
-      width={['container.sm', 'container.md', 'container.lg', 'container.xl']}
+      maxWidth={['sm', 'md', 'lg', 'xl', '2xl']}
       position={'absolute'}
       top={'50%'}
       left={'50%'}
