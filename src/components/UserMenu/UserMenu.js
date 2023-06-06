@@ -1,4 +1,4 @@
-import { Button, Text, Icon, HStack, Avatar } from '@chakra-ui/react';
+import { Button, Text, Icon, Stack, Avatar } from '@chakra-ui/react';
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { useAuth } from 'hooks/hooks';
 import React from 'react';
@@ -11,10 +11,10 @@ export const UserMenu = () => {
 
   const handleLogOut = () => dispatch(logOut());
   return (
-    <HStack>
+    <Stack direction={['column', 'column', 'row', 'row']} alignItems={'center'}>
       <Avatar size='sm' name={user.name} src='https://bit.ly/broken-link' />
       <Text>{user.name}</Text>
       <Button type='button' onClick={handleLogOut}><Icon as={RiLogoutBoxFill} />Log Out</Button>
-    </HStack>
+    </Stack>
   )
 }
