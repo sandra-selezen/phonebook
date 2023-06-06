@@ -32,10 +32,10 @@ export const ContactList = ({ contacts, isLoading, error }) => {
               <Box>
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
-              <Box>
+              <Flex>
                 <Button title='Edit contact' aria-label='Edit contact' mr={'12px'}><RiUserSettingsFill /></Button>
                 <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
-              </Box>
+              </Flex>
             </Flex>
           ))}
         </VStack>
