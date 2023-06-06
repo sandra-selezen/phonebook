@@ -18,6 +18,7 @@ const styles = {
     body: {
       width: '100%',
       height: '100%',
+      color: 'hsl(0, 0%, 100%)',
     },
 
     '#root': {

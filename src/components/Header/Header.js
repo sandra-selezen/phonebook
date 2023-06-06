@@ -8,7 +8,12 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 export const Header = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <HStack as={'header'} justifyContent={'space-between'} padding={'24px 32px'}>
+    <HStack
+      as={'header'}
+      justifyContent={'space-between'}
+      padding={'24px 32px'}
+      bgGradient='linear(90deg, #2A6571 0%, #C15553 100%)'
+    >
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </HStack>
