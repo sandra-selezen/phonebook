@@ -41,10 +41,10 @@ const Contacts = () => {
     <CommonContainer>
       <VisuallyHidden><Heading>Contacts Page</Heading></VisuallyHidden>
       {!contacts.length && !error && !isLoading && (
-        <Box><Text>Your Phonebook is empty</Text></Box>
+        <Box><Text>Your Phonebook is empty 🥺</Text></Box>
       )}
       {contactsCount > 0 && (
-        <Box><Text>You have {contactsCount === 1 ? `${contactsCount} contact` : `${contactsCount} contacts`} in Phonebook</Text></Box>
+        <Box><Text>You have {contactsCount === 1 ? `${contactsCount} contact` : `${contactsCount} contacts`} in the Phonebook 😀</Text></Box>
       )}
       <Button onClick={onOpen}>Add new contact</Button>
       <Filter />
