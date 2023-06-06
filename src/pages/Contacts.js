@@ -10,7 +10,8 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
-  useDisclosure
+  useDisclosure,
+  Stack
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -40,13 +41,16 @@ const Contacts = () => {
   return (
     <CommonContainer>
       <VisuallyHidden><Heading>Contacts Page</Heading></VisuallyHidden>
-      {!contacts.length && !error && !isLoading && (
-        <Box><Text>Your Phonebook is empty 🥺</Text></Box>
-      )}
-      {contactsCount > 0 && (
-        <Box><Text>You have {contactsCount === 1 ? `${contactsCount} contact` : `${contactsCount} contacts`} in the Phonebook 😀</Text></Box>
-      )}
-      <Button onClick={onOpen}>Add new contact</Button>
+      <Stack direction={['column', 'column', 'row', 'row']} justifyContent={'space-between'} alignItems={'center'}>
+        {!contacts.length && !error && !isLoading && (
+          <Box><Text fontWeight={'700'}>Your Phonebook is empty 🥺</Text></Box>
+        )}
+        {contactsCount > 0 && (
+          <Box><Text fontWeight={'700'}>You have {contactsCount === 1 ? `${contactsCount} contact` : `${contactsCount} contacts`} in the Phonebook 😀</Text></Box>
+        )}
+        <Box><Button onClick={onOpen}>Add new contact</Button></Box>
+      </Stack>
+      
       <Filter />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
