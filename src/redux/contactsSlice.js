@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./operations";
+import { fetchContacts, addContact, changeContact, deleteContact } from "./operations";
 import { logOut } from "./auth/operations";
 
 const pendingReducer = state => {
@@ -18,6 +18,14 @@ const addContactFulfilledReducer = (state, action) => {
   state.isLoading = false;
   state.error = null;
   state.items.push(action.payload);
+};
+const changeContactFulfilledReduser = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  const index = state.items.findIndex(
+    contact => contact.id === action.payload.id
+  );
+  state.items.splice(index, 1, action.payload);
 };
 const deleteContactFulfilledReducer = (state, action) => {
   state.isLoading = false;
@@ -48,6 +56,9 @@ const contactsSlice = createSlice({
       .addCase(addContact.pending, pendingReducer)
       .addCase(addContact.fulfilled, addContactFulfilledReducer)
       .addCase(addContact.rejected, rejectedReducer)
+      .addCase(changeContact.pending, pendingReducer)
+      .addCase(changeContact.fulfilled, changeContactFulfilledReduser)
+      .addCase(changeContact.rejected, rejectedReducer)
       .addCase(deleteContact.pending, pendingReducer)
       .addCase(deleteContact.fulfilled, deleteContactFulfilledReducer)
       .addCase(deleteContact.rejected, rejectedReducer)
