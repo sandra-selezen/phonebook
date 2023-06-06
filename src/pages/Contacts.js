@@ -4,12 +4,6 @@ import {
   Box,
   Text,
   Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
   useDisclosure,
   Stack
 } from '@chakra-ui/react';
@@ -18,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import { useError, useFilteredContacts, useIsLoading } from 'hooks/hooks';
 
+import { ContactModal } from 'components/Modal/ContactModal';
 import { ContactForm } from 'components/ContactsForm/ContactForm';
 import { ContactList } from 'components/ContactsList/ContactsList';
 import { CommonContainer } from 'components/Container/CommonContainer';
@@ -57,21 +52,9 @@ const Contacts = () => {
       </Stack>
       
       <Filter />
-      <Modal isOpen={isOpen} onClose={onClose} variant='sunset'>
-        <ModalOverlay
-          bg='none'
-          backdropFilter='auto'
-          backdropInvert='20%'
-          backdropBlur='2px'
-        />
-        <ModalContent>
-          <ModalHeader>Add new contact</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <ContactForm />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <ContactModal isOpen={isOpen} onClose={onClose} title={'Add new contact'}>
+        <ContactForm />
+      </ContactModal>
       <ContactList contacts={contacts} isLoading={isLoading} error={error} />
     </CommonContainer>
   )
