@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact, fetchContacts } from 'redux/operations';
-import { VStack, Text, Box, Button, Flex } from '@chakra-ui/react';
+import { VStack, StackDivider, Text, Box, Button, Flex } from '@chakra-ui/react';
 import { useError, useFilteredContacts, useIsLoading } from 'hooks/hooks';
 import React, { useEffect } from 'react';
 import { RiUserUnfollowFill } from 'react-icons/ri';
@@ -25,7 +25,7 @@ export const ContactList = () => {
         <Box><Text>Your Phonebook is empty</Text></Box>
       )}
       {!error && !isLoading && contacts?.length > 0 && (
-        <VStack spacing='24px'>
+        <VStack spacing={4} divider={<StackDivider borderColor={'white'} />}>
           {contacts.map(contact => (
             <Flex key={contact.id} alignItems={'center'} gap={'24px'}>
               <Box>
