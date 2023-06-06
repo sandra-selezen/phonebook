@@ -57,11 +57,11 @@ const Contacts = () => {
       </Stack>
       
       <Filter />
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} variant='sunset'>
         <ModalOverlay
           bg='none'
           backdropFilter='auto'
-          backdropInvert='10%'
+          backdropInvert='20%'
           backdropBlur='2px'
         />
         <ModalContent>

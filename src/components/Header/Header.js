@@ -12,7 +12,7 @@ export const Header = () => {
       as={'header'}
       justifyContent={'space-between'}
       padding={'24px 32px'}
-      bgGradient='linear(90deg, #2A6571 0%, #C15553 100%)'
+      bgGradient='linear-gradient(90deg, #2A6571 0%, #C15553 100%)'
     >
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}

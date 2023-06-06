@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { VStack, StackDivider, Text, Box, Button, Spinner, Flex, HStack } from '@chakra-ui/react';
+import { VStack, StackDivider, Text, Box, Button, Spinner, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { RiUserUnfollowFill } from 'react-icons/ri';
 

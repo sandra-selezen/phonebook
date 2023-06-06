@@ -49,11 +49,11 @@ export const ContactForm = () => {
       onSubmit={onAddContact}
     >
       <Form>
-        <FormControl isRequired>
+        <FormControl isRequired marginBottom={'12px'}>
           <FormLabel htmlFor='name'><Icon as={RiUserFill} />Name</FormLabel>
           <Field as={Input} id='name' name='name' type='text' placeholder='Enter contact name' />
         </FormControl>
-        <FormControl isRequired>
+        <FormControl isRequired marginBottom={'12px'}>
           <FormLabel htmlFor='number'><Icon as={RiPhoneFill} />Number</FormLabel>
           <Field as={Input} id='number' name='number' type='tel' placeholder='Enter contact phone number' />
         </FormControl>
