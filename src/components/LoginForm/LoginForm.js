@@ -36,12 +36,12 @@ export const LoginForm = () => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <FormControl isRequired>
-          <FormLabel htmlFor='email'><Icon as={RiMailFill} />Email</FormLabel>
+        <FormControl isRequired marginBottom={'12px'}>
+          <FormLabel htmlFor='email'><Icon as={RiMailFill} mr={'8px'} />Email</FormLabel>
           <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
+        <FormControl isRequired marginBottom={'12px'}>
+          <FormLabel htmlFor='password'><Icon as={RiLock2Fill} mr={'8px'} />Password</FormLabel>
           <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
         </FormControl>
         <Button type='submit'><Icon as={RiLoginBoxFill} />Log In</Button>

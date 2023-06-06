@@ -38,16 +38,16 @@ export const SignUpForm = () => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <FormControl isRequired>
-          <FormLabel htmlFor='name'><Icon as={RiUserFill} />Full name</FormLabel>
+        <FormControl isRequired marginBottom={'12px'}>
+          <FormLabel htmlFor='name'><Icon as={RiUserFill} mr={'8px'} />Full name</FormLabel>
           <Field as={Input} id='name' name='name' type='text' placeholder='Enter your full name' />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor='email'><Icon as={RiMailFill} />Email</FormLabel>
+        <FormControl isRequired marginBottom={'12px'}>
+          <FormLabel htmlFor='email'><Icon as={RiMailFill} mr={'8px'} />Email</FormLabel>
           <Field as={Input} id='email' name='email' type='email' placeholder='Enter email' />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor='password'><Icon as={RiLock2Fill} />Password</FormLabel>
+        <FormControl isRequired marginBottom={'12px'}>
+          <FormLabel htmlFor='password'><Icon as={RiLock2Fill} mr={'8px'} />Password</FormLabel>
           <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
         </FormControl>
         <Button type='submit'><Icon as={RiLoginBoxFill} />Sign Up</Button>
