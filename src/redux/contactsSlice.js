@@ -14,7 +14,6 @@ const fetchContactsFulfilledReducer = (state, action) => {
   state.error = null;
   state.items = action.payload;
 };
-
 const addContactFulfilledReducer = (state, action) => {
   state.isLoading = false;
   state.error = null;
