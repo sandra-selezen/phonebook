@@ -1,4 +1,10 @@
-import { Button, FormControl, FormLabel, Input, Icon } from '@chakra-ui/react';
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Icon,
+} from '@chakra-ui/react';
 import { Formik, Form, Field } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
@@ -23,9 +29,7 @@ export const ChangeContactForm = () => {
   console.log(contacts);
   const dispatch = useDispatch();
 
-  const onChangeContact = () => {
-
-  }
+  const onChangeContact = (contactId) => dispatch(changeContact(contactId));
 
   return (
     <Formik
@@ -34,13 +38,13 @@ export const ChangeContactForm = () => {
       onSubmit={onChangeContact}
     >
       <Form>
-        <FormControl isRequired marginBottom={'12px'}>
+        <FormControl marginBottom={'12px'}>
           <FormLabel htmlFor='name'><Icon as={RiUserFill} mr={'8px'} />Name</FormLabel>
-          <Field as={Input} id='name' name='name' type='text' placeholder='Enter contact name' />
+          <Field as={Input} id='name' name='name' type='text' />
         </FormControl>
-        <FormControl isRequired marginBottom={'12px'}>
+        <FormControl marginBottom={'12px'}>
           <FormLabel htmlFor='number'><Icon as={RiPhoneFill} mr={'8px'} />Number</FormLabel>
-          <Field as={Input} id='number' name='number' type='tel' placeholder='Enter contact phone number' />
+          <Field as={Input} id='number' name='number' type='tel' />
         </FormControl>
         <Button type='submit'>Change contact</Button>
       </Form>
