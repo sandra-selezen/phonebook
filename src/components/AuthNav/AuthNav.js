@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Stack } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 import { Link } from '@chakra-ui/react'
 import { Link as NavLink } from 'react-router-dom';
 
