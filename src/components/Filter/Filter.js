@@ -14,7 +14,7 @@ export const Filter = () => {
 
   return (
     <FormControl marginBottom={'24px'}>
-      <FormLabel><Icon as={RiUserSearchFill} /> Find contact by name </FormLabel>
+      <FormLabel><Icon as={RiUserSearchFill} mr={'8px'} /> Find contact by name </FormLabel>
       <Input value={filter} onChange={handleFilter} autoComplete="off" />
     </FormControl>
   )
