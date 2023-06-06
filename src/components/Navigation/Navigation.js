@@ -8,7 +8,7 @@ export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
     <Box>
-      <Flex as={'nav'} gap={'32px'}>
+      <Flex as={'nav'} direction={['column', 'column', 'row', 'row']} alignItems={'center'} gap={['12px', '12px', '32px', '32px']}>
         <Box><Link as={NavLink} to="/">Home</Link></Box>
         {isLoggedIn && (<Box><Link as={NavLink} to="/contacts">Contacts</Link></Box>)}
       </Flex>
