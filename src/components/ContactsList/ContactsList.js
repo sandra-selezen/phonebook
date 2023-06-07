@@ -10,7 +10,7 @@ import {
   Flex,
   useDisclosure
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React from 'react';
 import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
 import { ContactModal } from 'components/Modal/ContactModal';
 import { ChangeContactForm } from 'components/ContactsForm/ChangeContactForm';
