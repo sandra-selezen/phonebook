@@ -9,7 +9,7 @@ import { Formik, Form, Field } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
 import { RiPhoneFill, RiUserFill } from "react-icons/ri";
-import { useContacts } from 'hooks/hooks';
+// import { useContacts } from 'hooks/hooks';
 import { useDispatch } from 'react-redux';
 import { changeContact } from 'redux/operations';
 
@@ -18,18 +18,18 @@ const schema = yup.object().shape({
   number: yup.string().required(),
 });
 
-const initialValues = {
-  name: "",
-  number: "",
+export const ChangeContactForm = () => {
+  const initialValues = {
+    name: "",
+    number: "",
 };
 
-export const ChangeContactForm = () => {
-
-  const contacts = useContacts();
-  console.log(contacts);
   const dispatch = useDispatch();
 
-  const onChangeContact = (contactId) => dispatch(changeContact(contactId));
+  const onChangeContact = (contactId) => {
+
+    dispatch(changeContact(contactId));
+  }
 
   return (
     <Formik

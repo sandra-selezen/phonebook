@@ -10,16 +10,19 @@ import {
   Flex,
   useDisclosure
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
 import { ContactModal } from 'components/Modal/ContactModal';
 import { ChangeContactForm } from 'components/ContactsForm/ChangeContactForm';
 
-export const ContactList = ({ contacts, isLoading, error, onClick }) => {
+export const ContactList = ({ contacts, isLoading, error }) => {
+
+// const [selectedContact, setselectedContact] = useState({});
 
   const dispatch = useDispatch();
   const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       {isLoading && <Spinner />}
