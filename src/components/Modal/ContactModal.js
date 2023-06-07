@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Modal,
   ModalOverlay,
@@ -19,7 +20,7 @@ export const ContactModal = ({ isOpen, onClose, title, children }) => {
         backdropBlur='2px'
       />
       <ModalContent>
-      <ModalHeader>{title}</ModalHeader>
+        <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           {children}
@@ -27,4 +28,11 @@ export const ContactModal = ({ isOpen, onClose, title, children }) => {
       </ModalContent>
     </Modal>
   )
+};
+
+ContactModal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  title: PropTypes.string,
+  children: PropTypes.any,
 }

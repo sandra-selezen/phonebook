@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Button,
   FormControl,
@@ -36,5 +37,9 @@ export const ChangeContactForm = ({ initialValues, onSubmit }) => {
       </Form>
     </Formik>
   )
+};
 
+ChangeContactForm.propTypes = {
+  initialValues: PropTypes.object,
+  onSubmit: PropTypes.func,
 }

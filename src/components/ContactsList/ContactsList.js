@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { updateContact, deleteContact } from 'redux/operations';
 import {
@@ -65,4 +66,10 @@ export const ContactList = ({ contacts, isLoading, error }) => {
       </ContactModal>
     </>
   )
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  isLoading: PropTypes.bool,
+  error: PropTypes.any,
 }

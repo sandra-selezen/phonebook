@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from '@chakra-ui/react';
 import React from 'react';
 
@@ -21,4 +22,8 @@ export const CommonContainer = ({ children }) => {
       {children}
     </Container>
   )
+};
+
+CommonContainer.propTypes = {
+  children: PropTypes.any,
 }
