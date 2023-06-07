@@ -14,7 +14,7 @@ export const UserMenu = () => {
     <Stack direction={['column', 'column', 'row', 'row']} alignItems={'center'}>
       <Avatar size='sm' name={user.name} src='' />
       <Text>{user.name}</Text>
-      <Button type='button' onClick={handleLogOut}><Icon as={RiLogoutBoxFill} />Log Out</Button>
+      <Button type='button' onClick={handleLogOut}><Icon as={RiLogoutBoxFill} mr={'8px'} />Log Out</Button>
     </Stack>
   )
 }
