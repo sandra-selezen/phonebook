@@ -60,7 +60,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
           ))}
         </VStack>
       )}
-      <ContactModal isOpen={isOpen} onClose={onClose} title={'Change contact'}>
+      <ContactModal isOpen={isOpen} onClose={onClose} title={'Update contact'}>
         <ChangeContactForm initialValues={selectedContact} onSubmit={onHandleSubmit} />
       </ContactModal>
     </>
