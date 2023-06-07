@@ -60,7 +60,7 @@ export const ContactForm = () => {
           <FormLabel htmlFor='number'><Icon as={RiPhoneFill} mr={'8px'} />Number</FormLabel>
           <Field as={Input} id='number' name='number' type='tel' placeholder='Enter contact phone number' />
         </FormControl>
-        <Button type='submit'><Icon as={RiUserAddFill} />Add contact</Button>
+        <Button type='submit'><Icon as={RiUserAddFill} mr={'8px'} />Add contact</Button>
       </Form>
     </Formik>
   )

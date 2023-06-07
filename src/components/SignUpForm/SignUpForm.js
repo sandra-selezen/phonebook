@@ -50,7 +50,7 @@ export const SignUpForm = () => {
           <FormLabel htmlFor='password'><Icon as={RiLock2Fill} mr={'8px'} />Password</FormLabel>
           <Field as={Input} id='password' name='password' type='password' placeholder='Enter password' />
         </FormControl>
-        <Button type='submit'><Icon as={RiLoginBoxFill} />Sign Up</Button>
+        <Button type='submit'><Icon as={RiLoginBoxFill} mr={'8px'} />Sign Up</Button>
       </Form>
     </Formik>
   )
