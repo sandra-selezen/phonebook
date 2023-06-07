@@ -34,9 +34,13 @@ export const ContactForm = () => {
   }
 
   const onAddContact = ({ name, number }, { resetForm }) => {
-    isReplicated({ name, number })
-      ? toast('This contact is already in your Phonebook!', { icon: '👻', })
-      : dispatch(addContact({ name, number }));
+
+    if (isReplicated({ name, number })) {
+      toast('This contact is already in your Phonebook!', { icon: '👻', })
+    } else {
+      toast.success('New contact successfully added!');
+      dispatch(addContact({ name, number }));
+    }
     
     resetForm();
   };
