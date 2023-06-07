@@ -9,9 +9,6 @@ import { Formik, Form, Field } from 'formik';
 import React from 'react';
 import * as yup from 'yup';
 import { RiPhoneFill, RiUserFill } from "react-icons/ri";
-// import { useContacts } from 'hooks/hooks';
-// import { useDispatch } from 'react-redux';
-// import { changeContact } from 'redux/operations';
 
 const schema = yup.object().shape({
   name: yup.string().required(),

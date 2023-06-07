@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { changeContact, deleteContact } from 'redux/operations';
+import { updateContact, deleteContact } from 'redux/operations';
 import {
   VStack,
   StackDivider,
@@ -14,6 +14,7 @@ import React, { useState } from 'react';
 import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
 import { ContactModal } from 'components/Modal/ContactModal';
 import { ChangeContactForm } from 'components/ContactsForm/ChangeContactForm';
+import { toast } from 'react-hot-toast';
 
 export const ContactList = ({ contacts, isLoading, error }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,13 +26,15 @@ export const ContactList = ({ contacts, isLoading, error }) => {
   const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
   
   const handleEditContact = (contact) => {
-    console.log(contact);
     setSelectedContact(contact);
     onOpen();
   };
 
   const onHandleSubmit = (values) => {
-    console.log(values);
+    dispatch(updateContact(values));
+    setSelectedContact(null);
+    toast.success('Contact updated successfully');
+    onClose();
   };
 
   return (
@@ -58,7 +61,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
         </VStack>
       )}
       <ContactModal isOpen={isOpen} onClose={onClose} title={'Change contact'}>
-        <ChangeContactForm initialValues={selectedContact} onSubmit={() => onHandleSubmit()} />
+        <ChangeContactForm initialValues={selectedContact} onSubmit={onHandleSubmit} />
       </ContactModal>
     </>
   )
