@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { changeContact, deleteContact } from 'redux/operations';
 import {
   VStack,
   StackDivider,
@@ -10,18 +10,29 @@ import {
   Flex,
   useDisclosure
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { RiUserUnfollowFill, RiUserSettingsFill } from 'react-icons/ri';
 import { ContactModal } from 'components/Modal/ContactModal';
 import { ChangeContactForm } from 'components/ContactsForm/ChangeContactForm';
 
 export const ContactList = ({ contacts, isLoading, error }) => {
-
-// const [selectedContact, setselectedContact] = useState({});
-
-  const dispatch = useDispatch();
-  const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
+  const [selectedContact, setSelectedContact] = useState(null);
+  
+  const dispatch = useDispatch();
+  
+  const onDeleteContact = (contactId) => dispatch(deleteContact(contactId));
+  
+  const handleEditContact = (contact) => {
+    console.log(contact);
+    setSelectedContact(contact);
+    onOpen();
+  };
+
+  const onHandleSubmit = (values) => {
+    console.log(values);
+  };
 
   return (
     <>
@@ -39,7 +50,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
                 <Text>{contact.name}: {contact.number}</Text>
               </Box>
               <Flex>
-                <Button title='Edit contact' aria-label='Edit contact' mr={'12px'} onClick={onOpen}><RiUserSettingsFill /></Button>
+                <Button title='Edit contact' aria-label='Edit contact' mr={'12px'} onClick={() => handleEditContact(contact)}><RiUserSettingsFill /></Button>
                 <Button title='Delete contact' aria-label='Delete contact' onClick={() => onDeleteContact(contact.id)}><RiUserUnfollowFill /></Button>
               </Flex>
             </Flex>
@@ -47,7 +58,7 @@ export const ContactList = ({ contacts, isLoading, error }) => {
         </VStack>
       )}
       <ContactModal isOpen={isOpen} onClose={onClose} title={'Change contact'}>
-        <ChangeContactForm />
+        <ChangeContactForm initialValues={selectedContact} onSubmit={() => onHandleSubmit()} />
       </ContactModal>
     </>
   )

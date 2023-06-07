@@ -29,12 +29,10 @@ export const addContact = createAsyncThunk(
 
 export const changeContact = createAsyncThunk(
   "contacts/changeContact",
-  async (data, thunkAPI) => {
+  async (contactId, thunkAPI) => {
     try {
-      const response = await axios.patch(`/contacts/${data.id}`, {
-        name: data.name,
-        number: data.number,
-      });
+      const response = await axios.patch(`/contacts/${contactId}`);
+      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

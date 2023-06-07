@@ -10,32 +10,21 @@ import React from 'react';
 import * as yup from 'yup';
 import { RiPhoneFill, RiUserFill } from "react-icons/ri";
 // import { useContacts } from 'hooks/hooks';
-import { useDispatch } from 'react-redux';
-import { changeContact } from 'redux/operations';
+// import { useDispatch } from 'react-redux';
+// import { changeContact } from 'redux/operations';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
   number: yup.string().required(),
 });
 
-export const ChangeContactForm = () => {
-  const initialValues = {
-    name: "",
-    number: "",
-};
-
-  const dispatch = useDispatch();
-
-  const onChangeContact = (contactId) => {
-
-    dispatch(changeContact(contactId));
-  }
+export const ChangeContactForm = ({ initialValues, onSubmit }) => {
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schema}
-      onSubmit={onChangeContact}
+      onSubmit={onSubmit}
     >
       <Form>
         <FormControl marginBottom={'12px'}>
