@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sandra-selezen.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://sandra-selezen.github.io/phonebook/",
   "dependencies": {
     "@chakra-ui/react": "^2.7.0",
     "@fontsource/poppins": "^5.0.2",
