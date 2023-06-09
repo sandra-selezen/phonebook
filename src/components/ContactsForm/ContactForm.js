@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button, FormControl, FormLabel, Input, Icon } from '@chakra-ui/react';
 import { Formik, Form, Field } from 'formik';
 import React from 'react';
@@ -18,7 +19,7 @@ const initialValues = {
   number: "",
 };
 
-export const ContactForm = () => {
+export const ContactForm = ({ onClose }) => {
 
   const contacts = useContacts();
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ export const ContactForm = () => {
     }
     
     resetForm();
+    onClose();
   };
 
   return (
@@ -65,3 +67,7 @@ export const ContactForm = () => {
     </Formik>
   )
 };
+
+ContactForm.propTypes = {
+  onClose: PropTypes.func,
+}

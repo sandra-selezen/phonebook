@@ -53,7 +53,7 @@ const Contacts = () => {
       
       <Filter />
       <ContactModal isOpen={isOpen} onClose={onClose} title={'Add new contact'}>
-        <ContactForm />
+        <ContactForm onClose={onClose} />
       </ContactModal>
       <ContactList contacts={contacts} isLoading={isLoading} error={error} />
     </CommonContainer>
